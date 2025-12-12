@@ -3,132 +3,137 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Satya Rajesh Korlapati — Resume</title>
+<title>Satya Rajesh Korlapati — Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
 <style>
-  :root {
-    --bg: #f9fafb;
-    --text: #1f2937;
-    --muted: #6b7280;
-    --card: #ffffff;
-    --line: #e5e7eb;
-    --accent: #2563eb;
-  }
+/* -----------------------------------------
+   COLOR VARIABLES
+----------------------------------------- */
+:root {
+  --bg: #f9fafb;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --line: #e5e7eb;
+  --accent: #2563eb;
+}
 
-  .dark {
-    --bg: #0f172a;
-    --text: #f1f5f9;
-    --muted: #cbd5e1;
-    --card: #1e293b;
-    --line: #334155;
-    --accent: #3b82f6;
-  }
+.dark {
+  --bg: #0f172a;
+  --text: #f1f5f9;
+  --muted: #cbd5e1;
+  --card: #1e293b;
+  --line: #334155;
+  --accent: #3b82f6;
+}
 
-  * { box-sizing: border-box; }
+* { box-sizing: border-box; }
 
-  body {
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    padding: 40px 20px;
-    transition: 0.3s ease;
-  }
+/* -----------------------------------------
+   GLOBAL
+----------------------------------------- */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 40px 20px;
+  transition: 0.3s ease;
+}
 
-  a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-  }
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
 
-  .container {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 28px;
-  }
+/* -----------------------------------------
+    LAYOUT GRID (DESKTOP)
+----------------------------------------- */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+}
 
-  .sidebar, .card {
-    background: var(--card);
-    padding: 28px;
-    border-radius: 16px;
-    border: 1px solid var(--line);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    transition: 0.3s ease;
-  }
+/* -----------------------------------------
+    SIDEBAR + CARD
+----------------------------------------- */
+.sidebar, .card {
+  background: var(--card);
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
 
-  .sidebar { position: sticky; top: 20px; height: fit-content; }
+.sidebar { position: sticky; top: 20px; height: fit-content; }
 
-  .name { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
-  .role { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+.name { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+.role { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
 
-  .section-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+.section-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
 
-  .muted { color: var(--muted); font-size: 14px; line-height: 1.6; }
+.muted { color: var(--muted); font-size: 14px; line-height: 1.6; }
 
-  .skill-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+/* -----------------------------------------
+    SKILLS
+----------------------------------------- */
+.skill-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 
-  .badge {
-    background: rgba(37,99,235,0.1);
-    padding: 6px 10px;
-    border-radius: 8px;
-    font-size: 13px;
-    color: var(--accent);
-    border: 1px solid rgba(37,99,235,0.2);
-  }
+.badge {
+  background: rgba(37,99,235,0.1);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--accent);
+  border: 1px solid rgba(37,99,235,0.2);
+}
 
-  hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
+/* -----------------------------------------
+    PROJECT CARD
+----------------------------------------- */
+.project-card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin-bottom: 14px;
+  background: var(--card);
+  transition: 0.3s ease;
+}
 
-  .project-card {
-    padding: 18px;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    margin-bottom: 14px;
-    background: var(--card);
-    transition: 0.3s ease;
-  }
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
 
-  .project-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-  }
+.project-buttons { margin-top: 12px; display: flex; gap: 10px; }
 
-  .project-buttons { margin-top: 12px; display: flex; gap: 10px; }
+.btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
 
-  .btn {
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 13px;
-    border: 1px solid var(--accent);
-    background: var(--accent);
-    color: white;
-    font-weight: 600;
-    transition: 0.25s ease;
-  }
+.btn-outline {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
 
-  .btn-outline {
-    background: transparent;
-    color: var(--accent);
-    border: 1px solid var(--accent);
-  }
-
-  /* Reveal Animation */
-  .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
-  .reveal.revealed { opacity: 1; transform: translateY(0px); }
-
-  .theme-toggle {
-    position: fixed; top: 20px; right: 20px;
-    padding: 10px 14px;
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    cursor: pointer;
-    color: var(--text);
-  }
-  /* WORK EXPERIENCE TIMELINE */
+/* -----------------------------------------
+   TIMELINE
+----------------------------------------- */
 .timeline {
   position: relative;
   margin-left: 10px;
@@ -140,10 +145,6 @@
   position: relative;
   margin-bottom: 28px;
   padding-left: 20px;
-}
-
-.timeline-item:last-child {
-  margin-bottom: 0;
 }
 
 .timeline-marker {
@@ -158,24 +159,51 @@
   box-shadow: 0 0 0 3px var(--accent);
 }
 
-.timeline-title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 4px;
+/* -----------------------------------------
+   EMOJI DARK MODE BUTTON (DESKTOP + MOBILE)
+----------------------------------------- */
+.mobile-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
+  background: var(--card);
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
-.timeline-duration {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 10px;
+/* -----------------------------------------
+   RESPONSIVENESS
+----------------------------------------- */
+@media (max-width: 900px) {
+  .container { grid-template-columns: 1fr; }
+  .sidebar { position: relative; }
 }
 
+@media (max-width: 600px) {
+  body { padding: 20px 12px; }
+
+  /* Hide summary on mobile */
+  .sidebar .section-title:nth-of-type(1),
+  .sidebar .muted:nth-of-type(2) {
+    display: none;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<button class="theme-toggle" id="themeToggle">Dark Mode</button>
+<!-- EMOJI DARK MODE BUTTON -->
+<button class="mobile-toggle" id="mobileToggle">🌙</button>
 
 <div class="container">
 
@@ -203,26 +231,19 @@
     <div class="section-title">Summary</div>
     <div class="muted">
       Java 17 Full Stack Developer experienced in Spring Boot, Microservices,
-      Angular, React, REST APIs and cloud deployments. Strong DSA foundation with 170+ LeetCode problems solved.
+      Angular, React, REST APIs and cloud deployments.
     </div>
 
     <hr />
 
     <div class="section-title">Skills</div>
     <div class="skill-badges">
-      <div class="badge">Java 17</div>
-      <div class="badge">Spring Boot</div>
-      <div class="badge">Microservices</div>
-      <div class="badge">Spring Security</div>
-      <div class="badge">Hibernate</div>
-      <div class="badge">Angular</div>
-      <div class="badge">React.js</div>
-      <div class="badge">REST APIs</div>
-      <div class="badge">MySQL</div>
-      <div class="badge">MongoDB</div>
-      <div class="badge">Swagger</div>
-      <div class="badge">Postman</div>
-      <div class="badge">Maven</div>
+      <div class="badge">Java 17</div><div class="badge">Spring Boot</div>
+      <div class="badge">Microservices</div><div class="badge">Spring Security</div>
+      <div class="badge">Hibernate</div><div class="badge">Angular</div>
+      <div class="badge">React.js</div><div class="badge">REST APIs</div>
+      <div class="badge">MySQL</div><div class="badge">MongoDB</div>
+      <div class="badge">Swagger</div><div class="badge">Postman</div>
       <div class="badge">Git/GitHub</div>
     </div>
 
@@ -230,7 +251,7 @@
 
     <div class="section-title">System Design</div>
     <div class="muted">
-      API Gateway • Load Balancing • Redis Caching • Kafka Messaging • Microservices Architecture • Distributed Logging
+      API Gateway • Redis Caching • Kafka Messaging • Microservices • Load Balancing
     </div>
 
     <hr />
@@ -246,174 +267,126 @@
 
       <div class="section-title">Professional Summary</div>
       <p class="muted">
-        Java Full Stack Developer at Mphasis contributing to enterprise-grade financial systems.
-        Skilled in backend development using Spring Boot & Microservices, and frontend development
-        in Angular & React.
+        Java Full Stack Developer at Mphasis contributing to enterprise-grade systems.
       </p>
 
       <hr />
 
+      <!-- WORK EXPERIENCE -->
       <div class="section-title">Work Experience</div>
+      <div class="timeline reveal">
 
-<div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-title">Java Developer — Mphasis</div>
+          <div class="timeline-duration">Dec 2024 – Present</div>
+          <ul class="muted">
+            <li>Developed financial APIs with Spring Boot.</li>
+            <li>Implemented JWT authentication.</li>
+            <li>Performance optimizations and caching.</li>
+          </ul>
+        </div>
 
-  <!-- MPHASIS -->
-  <div class="timeline-item">
-    <div class="timeline-marker"></div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-title">Full Stack Intern — CalciteX</div>
+          <div class="timeline-duration">Jul 2024 – Oct 2024</div>
+          <ul class="muted">
+            <li>React.js component development.</li>
+            <li>API integration with Strapi.</li>
+          </ul>
+        </div>
 
-    <div class="timeline-title">Java Developer — Mphasis (Fiserv Project)</div>
-    <div class="timeline-duration">Dec 2024 – Present • Pune</div>
-
-    <ul class="muted">
-      <li>Working on enterprise-grade financial APIs using Java 17 & Spring Boot.</li>
-      <li>Built microservices with Spring Cloud, scalable API layers, and service orchestration.</li>
-      <li>Implemented Spring Security + JWT authentication flows for secure communication.</li>
-      <li>Optimized API performance using pagination, indexing, caching and query tuning.</li>
-      <li>Collaborated in an Agile team with sprint reviews, planning & daily stand-ups.</li>
-    </ul>
-
-    <strong style="font-size:15px; display:block; margin-top:10px;">Key Project — Eventify (Event Management System)</strong>
-    <ul class="muted">
-      <li>Led a team as Full Stack Developer responsible for architecture & development.</li>
-      <li>Designed REST APIs in Spring Boot and built UI in Angular 18.</li>
-      <li>Developed event creation, registration, authentication and admin panel modules.</li>
-      <li>Integrated MySQL with optimized schema design and API validation.</li>
-      <li>Implemented notifications, event updates workflow, and role-based access.</li>
-    </ul>
-  </div>
-
-  <!-- CALCITEX -->
-  <div class="timeline-item">
-    <div class="timeline-marker"></div>
-
-    <div class="timeline-title">Full Stack Developer Intern — CalciteX Cybernetics</div>
-    <div class="timeline-duration">Jul 2024 – Oct 2024 • Hyderabad</div>
-
-    <ul class="muted">
-      <li>Developed responsive UIs using React.js for multiple client-facing modules.</li>
-      <li>Integrated Strapi backend APIs using Axios and implemented dynamic data flow.</li>
-      <li>Built reusable components, improved UX flow and optimized rendering performance.</li>
-      <li>Worked on Mars Production & Orient Spectra projects improving UI architecture.</li>
-    </ul>
-  </div>
-
-</div>
+      </div>
 
       <hr />
 
+      <!-- PROJECTS -->
       <div class="section-title">GitHub Projects</div>
 
       <!-- ROOMIO -->
-      <div class="project-card reveal">
+      <div class="project-card">
         <div class="project-title">Roomio — Chat Application</div>
         <div class="project-meta">React • Firebase • WebSockets</div>
-
         <ul class="muted">
-          <li>Real-time messaging with Firebase Authentication & WebSockets.</li>
-          <li>Created chat rooms, message history, and responsive UI.</li>
-          <li>Implemented secure login, real-time updates, and smooth UX.</li>
+          <li>Real-time messaging with Firebase and WebSockets.</li>
+          <li>Created chat rooms, history, responsive UI.</li>
+          <li>Secure authentication + real-time updates.</li>
         </ul>
-
         <div class="project-buttons">
           <a class="btn" href="https://roomio-chatapp.web.app/" target="_blank">Live Demo</a>
-          <a class="btn btn-outline" href="https://github.com/rajesh2150/Roomio-ChatApp" target="_blank">GitHub</a>
+          <a class="btn btn-outline" href="https://github.com/rajesh2150/Roomio-ChatApp">GitHub</a>
         </div>
       </div>
 
       <!-- PICKBAZAR -->
-      <div class="project-card reveal">
+      <div class="project-card">
         <div class="project-title">PickBazar — Shopping Web App</div>
         <div class="project-meta">React • Redux Toolkit • REST APIs</div>
-
         <ul class="muted">
-          <li>Developed scalable e-commerce frontend using React & Redux Toolkit.</li>
-          <li>Integrated product and cart APIs using Axios with secure flows.</li>
-          <li>Built reusable components & implemented responsive UI layout.</li>
+          <li>Built scalable e-commerce UI.</li>
+          <li>Integrated cart & product APIs.</li>
         </ul>
-
-        <div class="project-buttons">
-          <a class="btn btn-outline" href="https://github.com/rajesh2150/PickBazar" target="_blank">GitHub</a>
-        </div>
+        <a class="btn btn-outline" href="https://github.com/rajesh2150/PickBazar">GitHub</a>
       </div>
 
       <!-- PULSEAI -->
-      <div class="project-card reveal">
+      <div class="project-card">
         <div class="project-title">PulseAI (Open Source)</div>
         <div class="project-meta">React • REST APIs</div>
-
         <ul class="muted">
-          <li>Contributed interactive UI components for better user engagement.</li>
-          <li>Improved state management and responsive behavior.</li>
-          <li>Optimized rendering and reduced UI latency.</li>
+          <li>Interactive UI improvements.</li>
+          <li>State management enhancements.</li>
         </ul>
       </div>
 
       <!-- CRYPTO TRACKER -->
-      <div class="project-card reveal">
-        <div class="project-title">Live Crypto Coins Price Tracker</div>
+      <div class="project-card">
+        <div class="project-title">Live Crypto Coins Tracker</div>
         <div class="project-meta">React • CoinGecko API</div>
-
         <ul class="muted">
-          <li>Built a live price dashboard using CoinGecko real-time API.</li>
-          <li>Implemented search, filtering, and responsive data visualization.</li>
-          <li>Optimized rendering for frequent updates with minimal lag.</li>
+          <li>Live price dashboard.</li>
+          <li>Search + filtering + responsive UI.</li>
         </ul>
-
-        <div class="project-buttons">
-          <a class="btn btn-outline" href="https://github.com/rajesh2150/Crypto-Price-Tracking-ReactJS-App" target="_blank">GitHub</a>
-        </div>
+        <a class="btn btn-outline" href="https://github.com/rajesh2150/Crypto-Price-Tracking-ReactJS-App">GitHub</a>
       </div>
 
-      <!-- MARS PRODUCTION -->
-      <div class="project-card reveal">
+      <!-- MARS PROD -->
+      <div class="project-card">
         <div class="project-title">Mars Production</div>
         <div class="project-meta">React • Strapi Backend</div>
-
         <ul class="muted">
-          <li>Developed UI screens for managing production workflows.</li>
-          <li>Integrated Strapi APIs for data fetching & content management.</li>
-          <li>Created reusable components and improved UX/UI consistency.</li>
+          <li>UI for production workflow management.</li>
+          <li>Strapi data integration.</li>
         </ul>
-
-        <div class="project-buttons">
-          <a class="btn btn-outline" href="https://github.com/rajesh2150/Mars-Production" target="_blank">GitHub</a>
-        </div>
+        <a class="btn btn-outline" href="https://github.com/rajesh2150/Mars-Production">GitHub</a>
       </div>
 
       <!-- ORIENT SPECTRA -->
-      <div class="project-card reveal">
+      <div class="project-card">
         <div class="project-title">Orient Spectra</div>
         <div class="project-meta">React • UI/UX Enhancement</div>
-
         <ul class="muted">
-          <li>Enhanced existing product UI with new interactive components.</li>
-          <li>Improved performance and optimized data rendering.</li>
-          <li>Implemented new feature modules and improved design structure.</li>
+          <li>Improved UI components.</li>
+          <li>Optimized performance.</li>
         </ul>
-
-        <div class="project-buttons">
-          <a class="btn btn-outline" href="https://github.com/rajesh2150/Orient_Spectra" target="_blank">GitHub</a>
-        </div>
+        <a class="btn btn-outline" href="https://github.com/rajesh2150/Orient_Spectra">GitHub</a>
       </div>
 
       <!-- EASYBUY -->
-      <div class="project-card reveal">
+      <div class="project-card">
         <div class="project-title">EasyBuy — E-Commerce App</div>
         <div class="project-meta">Frontend • Shopping UI</div>
-
         <ul class="muted">
-          <li>Designed intuitive shopping experience with product listing & cart.</li>
-          <li>Built modular UI components for clean & maintainable structure.</li>
-          <li>Implemented responsive layouts for all screen sizes.</li>
+          <li>Designed shopping experience UI.</li>
+          <li>Responsive layouts for all screens.</li>
         </ul>
-
-        <div class="project-buttons">
-          <a class="btn btn-outline" href="https://github.com/rajesh2150/EasyBuy" target="_blank">GitHub</a>
-        </div>
+        <a class="btn btn-outline" href="https://github.com/rajesh2150/EasyBuy">GitHub</a>
       </div>
 
       <hr />
 
+      <!-- EDUCATION -->
       <div class="section-title">Education</div>
       <p class="muted">
         <strong>B.Tech (ECE) — JNTU University</strong><br />
@@ -424,46 +397,30 @@
   </main>
 </div>
 
-<!-- Dark Mode Script -->
+<!-- DARK MODE SCRIPT -->
 <script>
-  const toggle = document.getElementById("themeToggle");
-  const body = document.body;
+const body = document.body;
+const mobileBtn = document.getElementById("mobileToggle");
 
-  if (localStorage.getItem("theme") === "dark") {
+function setDarkMode(enable) {
+  if (enable) {
     body.classList.add("dark");
-    toggle.textContent = "Light Mode";
+    mobileBtn.textContent = "☀️";
+  } else {
+    body.classList.remove("dark");
+    mobileBtn.textContent = "🌙";
   }
+}
 
-  toggle.addEventListener("click", () => {
-    body.classList.toggle("dark");
+if (localStorage.getItem("theme") === "dark") {
+  setDarkMode(true);
+}
 
-    if (body.classList.contains("dark")) {
-      toggle.textContent = "Light Mode";
-      localStorage.setItem("theme", "dark");
-    } else {
-      toggle.textContent = "Dark Mode";
-      localStorage.setItem("theme", "light");
-    }
-  });
-</script>
-
-<!-- Scroll Reveal -->
-<script>
-  const revealEls = document.querySelectorAll(".reveal");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("revealed");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.18 }
-  );
-
-  revealEls.forEach((el) => observer.observe(el));
+mobileBtn.addEventListener("click", () => {
+  const dark = !body.classList.contains("dark");
+  setDarkMode(dark);
+  localStorage.setItem("theme", dark ? "dark" : "light");
+});
 </script>
 
 </body>
