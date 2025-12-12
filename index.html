@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Satya Rajesh Korlapati — Resume</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #f9fafb;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --card: #ffffff;
+    --line: #e5e7eb;
+    --accent: #2563eb;
+  }
+
+  .dark {
+    --bg: #0f172a;
+    --text: #f1f5f9;
+    --muted: #cbd5e1;
+    --card: #1e293b;
+    --line: #334155;
+    --accent: #3b82f6;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 40px 20px;
+    transition: 0.3s ease;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 28px;
+  }
+
+  .sidebar, .card {
+    background: var(--card);
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+  }
+
+  .sidebar { position: sticky; top: 20px; height: fit-content; }
+
+  .name { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+  .role { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+
+  .section-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+
+  .muted { color: var(--muted); font-size: 14px; line-height: 1.6; }
+
+  .skill-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+  .badge {
+    background: rgba(37,99,235,0.1);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--accent);
+    border: 1px solid rgba(37,99,235,0.2);
+  }
+
+  hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
+
+  .project-card {
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 14px;
+    background: var(--card);
+    transition: 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+  }
+
+  .project-buttons { margin-top: 12px; display: flex; gap: 10px; }
+
+  .btn {
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+    transition: 0.25s ease;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+
+  /* Reveal Animation */
+  .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+  .reveal.revealed { opacity: 1; transform: translateY(0px); }
+
+  .theme-toggle {
+    position: fixed; top: 20px; right: 20px;
+    padding: 10px 14px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text);
+  }
+  /* WORK EXPERIENCE TIMELINE */
+.timeline {
+  position: relative;
+  margin-left: 10px;
+  padding-left: 25px;
+  border-left: 3px solid var(--accent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 28px;
+  padding-left: 20px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -11px;
+  top: 4px;
+  width: 15px;
+  height: 15px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 3px var(--accent);
+}
+
+.timeline-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.timeline-duration {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="theme-toggle" id="themeToggle">Dark Mode</button>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar reveal">
+
+    <div class="name">Rajesh Korlapati</div>
+    <div class="role">Java Full Stack Developer — Mphasis (Fiserv Project)</div>
+
+    <div class="muted">
+      <strong>Email:</strong>
+      <a href="mailto:rajeshkorlapati465@gmail.com">rajeshkorlapati465@gmail.com</a><br />
+
+      <strong>Phone:</strong>
+      <a href="tel:9701506626">9701506626</a><br />
+
+      <strong>LeetCode:</strong>
+      <a href="https://leetcode.com/u/Rajesh4Korlapati/" target="_blank">Profile Link</a><br />
+
+      <strong>Location:</strong> Pune, India
+    </div>
+
+    <hr />
+
+    <div class="section-title">Summary</div>
+    <div class="muted">
+      Java 17 Full Stack Developer experienced in Spring Boot, Microservices,
+      Angular, React, REST APIs and cloud deployments. Strong DSA foundation with 170+ LeetCode problems solved.
+    </div>
+
+    <hr />
+
+    <div class="section-title">Skills</div>
+    <div class="skill-badges">
+      <div class="badge">Java 17</div>
+      <div class="badge">Spring Boot</div>
+      <div class="badge">Microservices</div>
+      <div class="badge">Spring Security</div>
+      <div class="badge">Hibernate</div>
+      <div class="badge">Angular</div>
+      <div class="badge">React.js</div>
+      <div class="badge">REST APIs</div>
+      <div class="badge">MySQL</div>
+      <div class="badge">MongoDB</div>
+      <div class="badge">Swagger</div>
+      <div class="badge">Postman</div>
+      <div class="badge">Maven</div>
+      <div class="badge">Git/GitHub</div>
+    </div>
+
+    <hr />
+
+    <div class="section-title">System Design</div>
+    <div class="muted">
+      API Gateway • Load Balancing • Redis Caching • Kafka Messaging • Microservices Architecture • Distributed Logging
+    </div>
+
+    <hr />
+
+    <div class="section-title">Languages</div>
+    <div class="muted">English • Hindi • Telugu</div>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="card reveal">
+
+      <div class="section-title">Professional Summary</div>
+      <p class="muted">
+        Java Full Stack Developer at Mphasis contributing to enterprise-grade financial systems.
+        Skilled in backend development using Spring Boot & Microservices, and frontend development
+        in Angular & React.
+      </p>
+
+      <hr />
+
+      <div class="section-title">Work Experience</div>
+
+<div class="timeline reveal">
+
+  <!-- MPHASIS -->
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+
+    <div class="timeline-title">Java Developer — Mphasis (Fiserv Project)</div>
+    <div class="timeline-duration">Dec 2024 – Present • Pune</div>
+
+    <ul class="muted">
+      <li>Working on enterprise-grade financial APIs using Java 17 & Spring Boot.</li>
+      <li>Built microservices with Spring Cloud, scalable API layers, and service orchestration.</li>
+      <li>Implemented Spring Security + JWT authentication flows for secure communication.</li>
+      <li>Optimized API performance using pagination, indexing, caching and query tuning.</li>
+      <li>Collaborated in an Agile team with sprint reviews, planning & daily stand-ups.</li>
+    </ul>
+
+    <strong style="font-size:15px; display:block; margin-top:10px;">Key Project — Eventify (Event Management System)</strong>
+    <ul class="muted">
+      <li>Led a team as Full Stack Developer responsible for architecture & development.</li>
+      <li>Designed REST APIs in Spring Boot and built UI in Angular 18.</li>
+      <li>Developed event creation, registration, authentication and admin panel modules.</li>
+      <li>Integrated MySQL with optimized schema design and API validation.</li>
+      <li>Implemented notifications, event updates workflow, and role-based access.</li>
+    </ul>
+  </div>
+
+  <!-- CALCITEX -->
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+
+    <div class="timeline-title">Full Stack Developer Intern — CalciteX Cybernetics</div>
+    <div class="timeline-duration">Jul 2024 – Oct 2024 • Hyderabad</div>
+
+    <ul class="muted">
+      <li>Developed responsive UIs using React.js for multiple client-facing modules.</li>
+      <li>Integrated Strapi backend APIs using Axios and implemented dynamic data flow.</li>
+      <li>Built reusable components, improved UX flow and optimized rendering performance.</li>
+      <li>Worked on Mars Production & Orient Spectra projects improving UI architecture.</li>
+    </ul>
+  </div>
+
+</div>
+
+      <hr />
+
+      <div class="section-title">GitHub Projects</div>
+
+      <!-- ROOMIO -->
+      <div class="project-card reveal">
+        <div class="project-title">Roomio — Chat Application</div>
+        <div class="project-meta">React • Firebase • WebSockets</div>
+
+        <ul class="muted">
+          <li>Real-time messaging with Firebase Authentication & WebSockets.</li>
+          <li>Created chat rooms, message history, and responsive UI.</li>
+          <li>Implemented secure login, real-time updates, and smooth UX.</li>
+        </ul>
+
+        <div class="project-buttons">
+          <a class="btn" href="https://roomio-chatapp.web.app/" target="_blank">Live Demo</a>
+          <a class="btn btn-outline" href="https://github.com/rajesh2150/Roomio-ChatApp" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <!-- PICKBAZAR -->
+      <div class="project-card reveal">
+        <div class="project-title">PickBazar — Shopping Web App</div>
+        <div class="project-meta">React • Redux Toolkit • REST APIs</div>
+
+        <ul class="muted">
+          <li>Developed scalable e-commerce frontend using React & Redux Toolkit.</li>
+          <li>Integrated product and cart APIs using Axios with secure flows.</li>
+          <li>Built reusable components & implemented responsive UI layout.</li>
+        </ul>
+
+        <div class="project-buttons">
+          <a class="btn btn-outline" href="https://github.com/rajesh2150/PickBazar" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <!-- PULSEAI -->
+      <div class="project-card reveal">
+        <div class="project-title">PulseAI (Open Source)</div>
+        <div class="project-meta">React • REST APIs</div>
+
+        <ul class="muted">
+          <li>Contributed interactive UI components for better user engagement.</li>
+          <li>Improved state management and responsive behavior.</li>
+          <li>Optimized rendering and reduced UI latency.</li>
+        </ul>
+      </div>
+
+      <!-- CRYPTO TRACKER -->
+      <div class="project-card reveal">
+        <div class="project-title">Live Crypto Coins Price Tracker</div>
+        <div class="project-meta">React • CoinGecko API</div>
+
+        <ul class="muted">
+          <li>Built a live price dashboard using CoinGecko real-time API.</li>
+          <li>Implemented search, filtering, and responsive data visualization.</li>
+          <li>Optimized rendering for frequent updates with minimal lag.</li>
+        </ul>
+
+        <div class="project-buttons">
+          <a class="btn btn-outline" href="https://github.com/rajesh2150/Crypto-Price-Tracking-ReactJS-App" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <!-- MARS PRODUCTION -->
+      <div class="project-card reveal">
+        <div class="project-title">Mars Production</div>
+        <div class="project-meta">React • Strapi Backend</div>
+
+        <ul class="muted">
+          <li>Developed UI screens for managing production workflows.</li>
+          <li>Integrated Strapi APIs for data fetching & content management.</li>
+          <li>Created reusable components and improved UX/UI consistency.</li>
+        </ul>
+
+        <div class="project-buttons">
+          <a class="btn btn-outline" href="https://github.com/rajesh2150/Mars-Production" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <!-- ORIENT SPECTRA -->
+      <div class="project-card reveal">
+        <div class="project-title">Orient Spectra</div>
+        <div class="project-meta">React • UI/UX Enhancement</div>
+
+        <ul class="muted">
+          <li>Enhanced existing product UI with new interactive components.</li>
+          <li>Improved performance and optimized data rendering.</li>
+          <li>Implemented new feature modules and improved design structure.</li>
+        </ul>
+
+        <div class="project-buttons">
+          <a class="btn btn-outline" href="https://github.com/rajesh2150/Orient_Spectra" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <!-- EASYBUY -->
+      <div class="project-card reveal">
+        <div class="project-title">EasyBuy — E-Commerce App</div>
+        <div class="project-meta">Frontend • Shopping UI</div>
+
+        <ul class="muted">
+          <li>Designed intuitive shopping experience with product listing & cart.</li>
+          <li>Built modular UI components for clean & maintainable structure.</li>
+          <li>Implemented responsive layouts for all screen sizes.</li>
+        </ul>
+
+        <div class="project-buttons">
+          <a class="btn btn-outline" href="https://github.com/rajesh2150/EasyBuy" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="section-title">Education</div>
+      <p class="muted">
+        <strong>B.Tech (ECE) — JNTU University</strong><br />
+        2023 • CGPA: 7.0
+      </p>
+
+    </div>
+  </main>
+</div>
+
+<!-- Dark Mode Script -->
+<script>
+  const toggle = document.getElementById("themeToggle");
+  const body = document.body;
+
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark");
+    toggle.textContent = "Light Mode";
+  }
+
+  toggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
+
+    if (body.classList.contains("dark")) {
+      toggle.textContent = "Light Mode";
+      localStorage.setItem("theme", "dark");
+    } else {
+      toggle.textContent = "Dark Mode";
+      localStorage.setItem("theme", "light");
+    }
+  });
+</script>
+
+<!-- Scroll Reveal -->
+<script>
+  const revealEls = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.18 }
+  );
+
+  revealEls.forEach((el) => observer.observe(el));
+</script>
+
+</body>
+</html>
