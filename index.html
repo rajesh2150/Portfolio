@@ -51,6 +51,12 @@ a {
 
 hr { border-top: 1px solid var(--line); margin: 24px 0; }
 
+/* NEW: Explicit class for bold text within muted areas */
+.strong-text {
+    font-weight: 700;
+    color: var(--text); /* Makes it pop out from the muted text */
+}
+
 /* -----------------------------------------
     LAYOUT GRID (DESKTOP)
 ----------------------------------------- */
@@ -90,7 +96,6 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
 .reveal {
     opacity: 0;
     transform: translateY(20px);
-    /* Transition applied to both opacity and transform */
     transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
                 transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -108,6 +113,7 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
 .skill-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 
 .badge {
+    /* Default blue theme for general skills */
     background: rgba(37,99,235,0.1);
     padding: 6px 10px;
     border-radius: 8px;
@@ -135,6 +141,10 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
 
 .project-buttons { margin-top: 12px; display: flex; gap: 10px; }
 
+.project-meta{
+    color: lightgray;
+    font-size: 13px;
+}
 .btn {
     padding: 8px 14px;
     border-radius: 8px;
@@ -178,6 +188,10 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
     border-radius: 50%;
     border: 2px solid var(--card);
     box-shadow: 0 0 0 3px var(--accent);
+}
+.timeline-duration{
+    color: var(--muted);
+    font-size: 15px;
 }
 
 /* -----------------------------------------
@@ -229,7 +243,7 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
     <aside class="sidebar reveal">
 
         <div class="name">Rajesh Korlapati</div>
-        <div class="role">Java Full Stack Developer — Mphasis (Fiserv Project)</div>
+        <div class="role">Java Full Stack Developer — Mphasis</div>
 
         <div class="muted">
             <strong>Email:</strong>
@@ -240,7 +254,7 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
 
             <strong>LeetCode:</strong>
             <a href="https://leetcode.com/u/Rajesh4Korlapati/" target="_blank">Profile Link</a><br />
-
+            
             <strong>Location:</strong> Pune, India
         </div>
 
@@ -254,6 +268,17 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
 
         <hr />
 
+        <div class="section-title">Achievements</div>
+        <ul class="muted">
+            <li><span class="strong-text">🏆 2x Internal Hackathon Winner (Lead)</span> at Mphasis.</li>
+            <li><span class="strong-text">🔥 LeetCode:</span> Maintained a 100+ Day Streak.</li>
+            <li><span class="strong-text">Open Source:</span> Hacktoberfest Contributor 2024.
+                <a href="https://www.holopin.io/userbadge/cmh1sm7c50003l8043mfj7gw6" target="_blank" style="text-decoration: none;">(Holopin Badge)</a>
+            </li>
+        </ul>
+
+        <hr />
+
         <div class="section-title">Skills</div>
         <div class="skill-badges reveal">
             <div class="badge">Java 17</div><div class="badge">Spring Boot</div>
@@ -263,6 +288,8 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
             <div class="badge">MySQL</div><div class="badge">MongoDB</div>
             <div class="badge">Swagger</div><div class="badge">Postman</div>
             <div class="badge">Git/GitHub</div>
+            <div class="badge">AWS</div><div class="badge">TypeScript</div>
+            <div class="badge">Linux</div>
         </div>
 
         <hr />
@@ -274,8 +301,7 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
 
         <hr />
 
-        <div class="section-title">Languages</div>
-        <div class="muted reveal">English • Hindi • Telugu</div>
+    
 
     </aside>
 
@@ -292,24 +318,31 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
             <div class="section-title">Work Experience</div>
             <div class="timeline">
                 
-                <div class="timeline-item reveal">
+              <div class="timeline-item reveal">
                     <div class="timeline-marker"></div>
-                    <div class="timeline-title">Java Developer — Mphasis</div>
+                    <div class="timeline-title">Java Developer (Team Lead, 2x Hackathon Winner) — Mphasis</div>
                     <div class="timeline-duration">Dec 2024 – Present</div>
                     <ul class="muted">
-                        <li>Developed financial APIs with Spring Boot.</li>
-                        <li>Implemented JWT authentication.</li>
-                        <li>Performance optimizations and caching.</li>
+                        <li><span class="strong-text">2x Internal Hackathon Winner (Lead):</span> Successfully led development teams to victory twice, focusing on critical enterprise tools:
+                            <ul>
+                                <li><span class="strong-text">Custom JSON Parser:</span> Developed a high-performance, custom JSON parsing solution to improve data ingestion speed.</li>
+                                <li><span class="strong-text">Microservices Load Balancer:</span> Built a proprietary software load balancer prototype for enhanced service distribution and resilience.</li>
+                            </ul>
+                        </li>
+                        <li>Developing enterprise-grade financial APIs for the Fiserv project using <span class="strong-text">Java 17</span>, <span class="strong-text">Spring Boot</span>, and <span class="strong-text">Microservices</span>.</li>
+                        <li>Implemented secure authentication flows using <span class="strong-text">JWT</span> and <span class="strong-text">Spring Security</span>, standardizing microservice integration.</li>
+                        <li>Optimized backend performance and scalability through caching strategies and database query tuning.</li>
                     </ul>
                 </div>
-
                 <div class="timeline-item reveal">
                     <div class="timeline-marker"></div>
                     <div class="timeline-title">Full Stack Intern — CalciteX</div>
                     <div class="timeline-duration">Jul 2024 – Oct 2024</div>
                     <ul class="muted">
-                        <li>React.js component development.</li>
-                        <li>API integration with Strapi.</li>
+                        <li>Focused on frontend development, building modular and reusable components using <span class="strong-text">React.js</span> to enhance user experience and maintainability.</li>
+                        <li>Managed content and data via the headless CMS, <span class="strong-text">Strapi</span>, integrating its REST APIs efficiently with the React frontend.</li>
+                        <li>Utilized <span class="strong-text">AWS S3</span> for cloud storage of static assets and media, optimizing content delivery speeds.</li>
+                        <li>Practiced collaborative development using version control via <span class="strong-text">GitHub</span>, including pull requests and code reviews.</li>
                     </ul>
                 </div>
 
@@ -317,13 +350,13 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
 
             <hr />
 
-            <div class="section-title">GitHub Projects</div>
+            <div class="section-title">Featured Development Work</div>
 
-            <div class="project-card reveal">
+             <div class="project-card reveal">
                 <div class="project-title">Roomio — Chat Application</div>
                 <div class="project-meta">React • Firebase • WebSockets</div>
                 <ul class="muted">
-                    <li>Real-time messaging with Firebase and WebSockets.</li>
+                    <li><span class="strong-text">Real-time messaging</span> with <span class="strong-text">Firebase</span> and <span class="strong-text">WebSockets</span>.</li>
                     <li>Created chat rooms, history, responsive UI.</li>
                     <li>Secure authentication + real-time updates.</li>
                 </ul>
@@ -332,24 +365,70 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
                     <a class="btn btn-outline" href="https://github.com/rajesh2150/Roomio-ChatApp">GitHub</a>
                 </div>
             </div>
+            
+           <div class="project-card reveal">
+                <div class="project-title">Candidate Autofill — Chrome Extension for Job Forms</div>
+                <div class="project-meta">JavaScript • Chrome API • Content Scripts • Frontend Automation</div>
+                <ul class="muted">
+                    <li>Engineered a <strong>Chrome Extension</strong> that automatically fills complex job application forms on *any* website (e.g., name, education, work history) to eliminate repetitive manual entry.</li>
+                    <li>Implemented <span class="strong-text">Chrome Storage API</span> for securely saving personal profile data locally.</li>
+                    <li>Utilized <span class="strong-text">Content Scripts</span> to dynamically detect form fields (via ID, name, placeholder) and inject/simulate typing and <strong>one-click auto-uploading of resume files</strong>.</li>
+                    <li>Supports advanced form elements, including dropdowns (Select2), date pickers, and file inputs across various job portals.</li>
+                </ul>
+                <div class="project-buttons">
+                    <a class="btn" href="https://drive.google.com/file/d/1maPFgXKqPvczFBwESfAvGc8sKhFnwqvX/view?usp=sharing" target="_blank">Demo Video</a>
+                    <a class="btn btn-outline" href="https://github.com/rajesh2150/FillUp" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+              <div class="project-card reveal">
+                <div class="project-title">Bio-Branch — Open Source Contribution</div>
+                <div class="project-meta">JavaScript • Open Source • Hacktoberfest 2024</div>
+                <ul class="muted">
+                    <li>Contributed to a community-driven bio-link platform, improving [mention what you did: e.g., features, UI components, or bug fixes].</li>
+                    <li>Demonstrated commitment to open-source development by merging multiple pull requests.</li>
+                </ul>
+                <a class="btn btn-outline" href="https://github.com/rajesh2150/bio-branch" target="_blank">View Contribution</a>
+            </div>
+
+
+            <div class="project-card reveal">
+                <div class="project-title">Eventify — Full Stack Event Management App</div>
+                <div class="project-meta">Angular • Spring Boot • MySQL • REST APIs</div>
+                <ul class="muted">
+                    <li>Developed a robust full-stack application for event scheduling and management using the <span class="strong-text">Angular</span> frontend and <span class="strong-text">Spring Boot</span> backend.</li>
+                    <li>Designed and implemented <span class="strong-text">RESTful APIs</span> for user authentication, CRUD operations on events, and registration tracking.</li>
+                </ul>
+                <div class="project-buttons">
+                    <a class="btn btn-outline" href="https://github.com/rajesh2150/eventify-project" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+          
+           
 
             <div class="project-card reveal">
                 <div class="project-title">PickBazar — Shopping Web App</div>
                 <div class="project-meta">React • Redux Toolkit • REST APIs</div>
                 <ul class="muted">
-                    <li>Built scalable e-commerce UI.</li>
+                    <li>Built <span class="strong-text">scalable e-commerce UI</span>.</li>
                     <li>Integrated cart & product APIs.</li>
                 </ul>
                 <a class="btn btn-outline" href="https://github.com/rajesh2150/PickBazar">GitHub</a>
             </div>
 
+           
             <div class="project-card reveal">
                 <div class="project-title">PulseAI (Open Source)</div>
                 <div class="project-meta">React • REST APIs</div>
                 <ul class="muted">
+                    <li>Responsive layouts for all screens.</li>
                     <li>Interactive UI improvements.</li>
                     <li>State management enhancements.</li>
                 </ul>
+                <div class="project-buttons">
+                    <a class="btn btn-outline" href="https://github.com/rajesh2150/pulse" target="_blank">GitHub</a>
+                </div>
             </div>
 
             <div class="project-card reveal">
@@ -388,7 +467,7 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
                 <ul class="muted">
                     <li>Designed shopping experience UI.</li>
                     <li>Responsive layouts for all screens.</li>
-                </ul>
+                    </ul>
                 <a class="btn btn-outline" href="https://github.com/rajesh2150/EasyBuy">GitHub</a>
             </div>
 
@@ -396,7 +475,7 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
 
             <div class="section-title">Education</div>
             <p class="muted reveal">
-                <strong>B.Tech (ECE) — JNTU University</strong><br />
+                <span class="strong-text">B.Tech (ECE) — JNTU University</span><br />
                 2023 • CGPA: 7.0
             </p>
 
@@ -447,17 +526,15 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
             }
         });
     }, {
-        // Only 10% of the element needs to be visible to trigger the animation
+        // 10% of the element needs to be visible to trigger the animation
         threshold: 0.1
     });
 
-    // Start observing all elements with the 'reveal' class
     revealElements.forEach(element => {
         observer.observe(element);
     });
 
     // Manually trigger the reveal for the initial, above-the-fold content 
-    // so the user doesn't have to scroll to see the top section.
     document.querySelector(".sidebar").classList.add("revealed");
     document.querySelector(".card").classList.add("revealed");
 </script>
