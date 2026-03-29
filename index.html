@@ -244,10 +244,13 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
 @media (max-width: 600px) {
  body { padding: 20px 12px; }
 
- .sidebar .section-title:nth-of-type(1),
- .sidebar .muted:nth-of-type(2) {
+.sidebar .section-title:nth-of-type(1) {
   display: none;
- }
+}
+
+.sidebar .section-title:nth-of-type(1) + .muted {
+  display: none;
+}
 }
 </style>
 
@@ -390,46 +393,22 @@ hr { border-top: 1px solid var(--line); margin: 24px 0; }
             <div class="section-title">Work Experience</div>
             <div class="timeline">
                 
-            <div class="timeline-item reveal">
-    <div class="timeline-marker"></div>
-    <div class="timeline-title">Java Developer — Mphasis</div>
-    <div class="timeline-duration">Dec 2024 – Present</div>
-
-    <ul class="muted">
-        <li>Modernized legacy backend systems to 
-            <span class="strong-text">Java 17 & Spring Boot</span>, improving 
-            <span class="strong-text">scalability and maintainability</span>.
-        </li>
-
-        <li>Developed and optimized backend services using 
-            <span class="strong-text">Spring Boot</span>, improving 
-            <span class="strong-text">response time by 35%</span> in high-traffic scenarios.
-        </li>
-
-        <li>Designed and implemented 
-            <span class="strong-text">60+ RESTful APIs</span>, ensuring 
-            <span class="strong-text">99% system uptime</span> and seamless frontend-backend integration.
-        </li>
-
-        <li>Optimized database performance using 
-            <span class="strong-text">query tuning and indexing</span>, improving 
-            <span class="strong-text">data retrieval speed by 40%</span>.
-        </li>
-
-        <li>Worked in an 
-            <span class="strong-text">Agile environment</span>, collaborating with cross-functional teams to deliver features 
-            <span class="strong-text">20% faster</span> with high code quality.
-        </li>
-
-        <li>Deployed and supported backend services on 
-            <span class="strong-text">cloud environments (AWS)</span>, including infrastructure setup and configuration.
-        </li>
-
-        <li>Containerized microservices using 
-            <span class="strong-text">Docker</span> for consistent and portable deployments.
-        </li>
-    </ul>
-</div>
+              <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-title">Java Developer (Team Lead, 2x Hackathon Winner) — Mphasis</div>
+                    <div class="timeline-duration">Dec 2024 – Present</div>
+                    <ul class="muted">
+                        <li><span class="strong-text">2x Internal Hackathon Winner (Lead):</span> Successfully led development teams to victory twice, focusing on critical enterprise tools:
+                            <ul>
+                                <li><span class="strong-text">Custom JSON Parser:</span> Developed a high-performance, custom JSON parsing solution to improve data ingestion speed.</li>
+                                <li><span class="strong-text">Microservices Load Balancer:</span> Built a proprietary software load balancer prototype for enhanced service distribution and resilience.</li>
+                            </ul>
+                        </li>
+                        <li>Developing enterprise-grade financial APIs for the Fiserv project using <span class="strong-text">Java 17</span>, <span class="strong-text">Spring Boot</span>, and <span class="strong-text">Microservices</span>.</li>
+                        <li>Implemented secure authentication flows using <span class="strong-text">JWT</span> and <span class="strong-text">Spring Security</span>, standardizing microservice integration.</li>
+                        <li>Optimized backend performance and scalability through caching strategies and database query tuning.</li>
+                    </ul>
+                </div>
                 <div class="timeline-item reveal">
                     <div class="timeline-marker"></div>
                     <div class="timeline-title">Full Stack Intern — CalciteX</div>
